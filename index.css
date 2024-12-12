@@ -1,0 +1,525 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #181818;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Wrapper for consistent padding */
+.container {
+  width: 90%; /* Fluid width */
+  max-width: 1200px; /* Prevents it from stretching too wide */
+  margin: 0 auto; /* Centers the container */
+}
+
+/* Header Style */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 0;
+  background-color: transparent;
+  z-index: 1000;
+}
+
+header .logo img {
+  width: 50px;
+  margin-left: 20px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Smaller gaps for better alignment */
+  flex-wrap: wrap; /* Ensure menu wraps on small screens */
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300; /* Set font weight to light */
+  font-size: 1rem; /* Keep the font size */
+}
+
+
+header .search input {
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  background-color: #242424;
+  color: #fff;
+  max-width: 200px; /* Prevent it from being too wide */
+  width: 100%;
+  margin-left: -20px;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 50px;
+  background-color: #181818;
+  background-image: radial-gradient(circle 500px at top center , rgba(255, 204, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
+  min-height: 810px;
+  position: relative;
+}
+
+
+/* Text content section */
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0px;
+}
+
+.hero-content h1 span {
+  color: #ffcc00;
+}
+
+/* Typing effect */
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  overflow: hidden; /* Ensures text is hidden until it is typed */
+  white-space: nowrap; /* Prevents text from wrapping */
+  border-right: 3px solid #ffcc66; /* Cursor effect */
+  width: 0;
+  animation: typing 3s steps(20) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+.hero-content .btn {
+  display: inline-block; /* Ensure the button respects its content size */
+  padding: 10px 20px; /* Adjust padding for content */
+  background-color: #ffcc00;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-size: 1rem; /* Set the font size */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; /* Add hover effects */
+  margin-bottom: 0px;
+}
+
+/* Optional Hover Effects */
+.hero-content .btn:hover {
+  background-color: #e6b800; /* Slightly darker yellow on hover */
+  transform: scale(1.05);
+}
+
+/* Profile image section */
+.hero-image {
+  position: relative;
+}
+
+.hero-image img {
+  max-width: 600px;
+  display: block;
+  position: relative;
+  left: -150px;
+}
+
+
+/* Social links section */
+.social-links {
+  position: absolute;
+  top: 600px;
+  right: 50px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.social-links::before {
+  content: ''; 
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 90px; 
+  background-color: #ffcc66;;
+  transform: translateY(-150%);
+}
+
+.social-links a {
+  display: block;
+}
+
+.social-links img {
+  width: 35px; /* Adjust icon size */
+  height: 35px;
+  transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+  transform: scale(1.1); /* Hover effect */
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-image img {
+    max-width: 250px; /* Adjust image size on smaller screens */
+  }
+
+  .social-links {
+    top: 30px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-image img {
+    max-width: 200px;
+  }
+
+  .social-links {
+    top: 40px;
+    right: 10px;
+  }
+}
+
+
+/* About Section */
+.about {
+  padding: 70px 50px;
+  background-color: #242424;
+  text-align: left;
+  color: #e4e4e4;
+  font-family: 'Poppins', sans-serif; /* Use a clean, modern font */
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffffff; /* White color for the header */
+}
+
+.about .underline {
+  display: inline-block;
+  width: 50px; /* Length of the underline */
+  height: 3px; /* Thickness of the underline */
+  background-color: #ffcc66; /* Gold color */
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.about p span.highlight {
+  color: #ffcc66; /* Gold color for highlighted words */
+  font-weight: bold;
+}
+
+
+/* Skills Section */
+.skills {
+  padding: 50px 0;
+  text-align: center;
+  background-color: #242424;
+}
+
+.skills h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Dynamic grid */
+  gap: 20px;
+}
+
+.skill {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.skill:hover {
+  background-color: #ffcc66;
+  transform: scale(1.05);
+}
+
+.skill img {
+  max-width: 50px;
+  margin-bottom: 10px;
+}
+
+.skill p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .skills h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header nav ul {
+    flex-direction: column; /* Stack menu items */
+    gap: 10px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Contact Section */
+.contact {
+  padding: 70px 50px;
+  background-color: #242424;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.contact h2 {
+  font-size: 1.5rem;
+  margin-bottom: 50px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+}
+
+.contact h2::before,
+.contact h2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 100px;
+  height: 2px;
+  background-color: #ffcc66;
+}
+
+.contact h2::before {
+  left: -120px; /* Distance from the text */
+}
+
+.contact h2::after {
+  right: -120px; /* Distance from the text */
+}
+
+.contact::after {
+  content: "";
+  display: block;
+  width: auto; /* Long line width */
+  height: 2px; /* Line thickness */
+  background-color: #ffcc66; /* Line color */
+  margin: 50px auto 0; /* Space above the line and center it */
+}
+
+.contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  background-color: #242424;
+  padding: 20px 30px;
+  border-radius: 15px;
+  max-width: 350px;
+  width: 100%;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-item:hover {
+  background-color: #ffcc66;
+  transform: translateY(-5px);
+}
+
+.contact-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* For rounded icons */
+  background-color: #181818; /* Icon background */
+  padding: 5px;
+}
+
+.contact-item p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  text-align: left;
+}
+
+.contact-item:hover p {
+  color: #000; /* Change text color on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .testimonial h2, .contact h2 {
+    font-size: 2rem;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .contact-item p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Projects Section */
+.projects {
+  padding: 70px 50px;
+  background-color: #242424;
+  text-align: center;
+  color: #fff;
+}
+
+.projects h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Dynamic grid */
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.project-card {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: left;
+  transition: transform 0.3s, background-color 0.3s;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.project-card:hover {
+  background-color: #ffcc66;
+  transform: scale(1.05);
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #e4e4e4;
+  line-height: 1.5;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #ffcc66;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.project-card a:hover {
+  color: #e6b800;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .projects h2 {
+    font-size: 1.8rem;
+  }
+
+  .project-card h3 {
+    font-size: 1rem;
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
+  }
+}
